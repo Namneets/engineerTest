@@ -33,5 +33,8 @@ export class AppComponent {
 
   public closeModal():any{
   	$('#myModal').modal('hide');
+  	$('#myModal').removeClass('show');
   }
+
+
 }
