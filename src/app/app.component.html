@@ -1,0 +1,42 @@
+<div class="container">
+  <table class="table">
+      <tr>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Created_at</th>
+        <th>Author</th>
+      </tr>
+
+      <tbody>
+        <tr *ngFor="let item of tablePostData;let i=index;" (click)="openModal(item)">
+        <td>{{item.title}}</td>
+        <td>{{item.url}}</td>
+        <td>{{item.created_at}}</td>
+        <td>{{item.author}}</td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+
+<div>
+</div>
+
+<div class="modal fade" id="myModal" role="dialog" style="width:60%;margin-left: 20%">
+  <div class="modal-container">
+  <div class="modal-header"></div>
+
+  <div class="modal-content">
+    <button class="close" data-dismiss="modal" (click)="closeModal()" style="text-align: right">close</button>
+
+    <div class="content">
+      <h5>Model With row json post data</h5><br/>
+      Title : {{currentRowSelected?.title}} <br/>
+      URL : {{currentRowSelected?.url}} <br/>
+      Created_at : {{currentRowSelected?.created_at}} <br/>
+      Author : {{currentRowSelected?.author}} <br/>
+      Relevant Score : {{currentRowSelected?.relevancy_score}} <br/>
+    </div>
+
+  <div>
+</div>
+</div>
